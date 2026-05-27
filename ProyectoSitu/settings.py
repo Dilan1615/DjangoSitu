@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     "djangositu-bacsh3bfguaqgfbr.centralus-01.azurewebsites.net",
+    "127.0.0.1",
 ]
 
 # Application definition
@@ -77,12 +78,17 @@ WSGI_APPLICATION = 'ProyectoSitu.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'mssql',
+        'NAME': 'sqlisitu',
+        'USER': 'adminsitu@sqlisitu',
+        'PASSWORD': 'Andantino2005#',
+        'HOST': 'sqlisitu.database.windows.net',
+        'PORT': '1433',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 18 for SQL Server',            
+        },
     }
 }
 
